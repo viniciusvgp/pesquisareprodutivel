@@ -185,8 +185,30 @@ _*As a Reviewer*_ This may be an interesting contribution but:
   \end{columns}
 #+END_LaTeX
 
-*** TODO
+*** Why Are Scientific Studies so Difficult to Reproduce?
+*Human error*:
+- Experimenter *bias* ([[http://www.nature.com/news/crowdsourced-research-many-hands-make-tight-work-1.18508][crowdsourced research?]])
+- Programming *errors* or data manipulation *mistakes*
+- Poorly selected statistical test
+# ([[https://aom.org/uploadedFiles/Publications/AMJ/Apr_2014_FTE.pdf][especially with Big Data]], Journal: Academy of Management 2014)
+\medskip
+
+*There is just no real incentive in doing so*:
+- Legal barriers, *copyright* (/[[http://web.stanford.edu/~vcs/talks/SC15-Nov182015-STODDEN.pdf][many ongoing thoughts on this in the
+  US]]/)
+- *Competition* issue (/researchware/, bibliometry, ...)
+- Publication *bias* (only the idea matters, not the gory details)
+- Rewards for *positive results*, not for consolidating results
+\medskip
+
+*Technical difficulty*:
+- +*Hardware and software evolve too quickly. It's not worth it*+
+- +*No resources for storing somuch data/information*+
+- +*Lack of easy-to-use tools*+
+
 - PAREI AQUI
+*** TODO
+
 *** A Few Edifying Examples
 #+BEGIN_LaTeX
   \begin{columns}
