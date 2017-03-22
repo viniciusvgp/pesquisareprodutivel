@@ -642,7 +642,6 @@ preservation is not addressed here (see for example [[http://www.activepapers.or
 #   - Caching mechanism
 #   - Side effects are the enemy of reproducibility
 *** 2. Logging your activity \qquad (Laboratory Notebook)
-\small Pionneered by Mathematica (TBOMK)
 - [[http://jupyter.org/][Jupyter]] project (formerly known as the IPython notebook)
 - [[http://orgmode.org/][Org-mode]] again!
   - Capture mechanism (notes, todo, ...)
@@ -650,22 +649,21 @@ preservation is not addressed here (see for example [[http://www.activepapers.or
     meta-programming
   - Tagging mechanism to structure the journal
   - Link mechanism, Todo, Calendar views, Tables, ...
-
-I have a very intense usage and so do all my master/PhD students
-(e.g., *[[http://starpu-simgrid.gforge.inria.fr/misc/LabBook.html\#sec-8-1][here]]*) \vspace{-.5em}
+\vspace{-.5em}
+Tips: \vspace{-.2em}
 - Spending *more than an hour without* at least *writing* what you're
-  working on *is not right*... *Take a 5 minutes* break and ask yourself
+  working on *is not right*... *Take a 5 min* break and ask yourself
   what you're doing, what is keeping you busy and where all this is
-  leading you\vspace{-.5em}
+  leading you\vspace{-.2em}
 - While working on something, you will often notice/think about
   something you should fix/improve but you just don't want to do it
-  now. Take 20 seconds to write a *TODO* entry\vspace{-.5em}
-- There are moments where you have to *wait for something* (compiling,
-  deployment, ...). It is generally the perfect time for improving
-  your notes (e.g., detail the steps to accomplish a TODO entry)\vspace{-.5em}
+  now. Take 20 seconds to write a *TODO* entry\vspace{-.2em}
+- There are moments where you have to *wait for something*
+  (e.g. compiling) → perfect time for improving your notes
+  \vspace{-.2em}
 - *By the end of the day*: daily (and weekly) *review!* \vspace{-.5em}
-  - Update your lists, decide the next steps, summarize what you
-    did/learnt,...
+  # - Update your lists, decide the next steps, summarize what you
+  #  did/learnt,...
 *** Pros and Cons of these three tools
 - Ipython notebook:
   - $\smiley$ Easy to set up, user-friendly, machine readable format (JSON),
