@@ -410,9 +410,11 @@ Did I mention we have *parallel machines* nowadays? $\winkey$
 \medskip
 
 *There is just no real incentive in doing so*:
-- Legal barriers, *copyright* ([[http://web.stanford.edu/~vcs/talks/SC15-Nov182015-STODDEN.pdf][many ongoing thoughts on this in the US]])
-- *Competition* issue (/researchware/, bibliometry, ...)
-- Publication *bias* (only the idea matters, not the gory details)
+- Legal barriers, *copyright* 
+# ([[http://web.stanford.edu/~vcs/talks/SC15-Nov182015-STODDEN.pdf][many ongoing thoughts on this in the US]])
+- *Competition* issue 
+# (/researchware/, bibliometry, ...)
+- Publication *bias* (only the idea matters, not the details)
 - Rewards for *positive results*, not for consolidating results
 \medskip
 
@@ -420,8 +422,6 @@ Did I mention we have *parallel machines* nowadays? $\winkey$
 - +*Hardware and software evolve too quickly. It's not worth it*+
 - +*No resources for storing somuch data/information*+
 - +*Lack of easy-to-use tools*+
-
-- PAREI AQUI
 
 *** Reproducibility: What Are We Talking About?
 #+BEGIN_LaTeX
