@@ -463,7 +463,7 @@ development of many tools:
 - Dissemination platforms
 
 And this landscape is rapidly evolving
-** Reproducible Research/Open Science: Illustrating Nice Ideas Through Different Tools
+* Reproducible Research/Open Science: Illustrating Nice Ideas Through Different Tools
 #+LaTeX: \begin{frame}{Outline}\tableofcontents[current]\end{frame}
 *** Vistrails: a Workflow Engine for Provenance Tracking
 #+BEGIN_LaTeX
