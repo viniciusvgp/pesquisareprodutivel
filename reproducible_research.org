@@ -546,319 +546,11 @@ file:images/reprozip.png
 And also: \textbf{Org-Mode \smiley}, \textbf{Figshare}, \textbf{Zenodo}, \textbf{ActivePapers \smiley}, \textbf{Elsevier executable paper \frowny}, ...
 \end{overlayarea}
 #+END_LaTeX 
-*** TODO
-
-
-
-*** My Feeling                                                   :noexport:
-Computer scientists have an incredibly *poor training in
-probabilities, statistics, experiment management*, *Design of Experiments*
-  
-\medskip
-
-Why should we? Computer are *deterministic* machines after all, right?
-\winkey
-
-\medskip
-
-Ten years ago, I've started realizing how *lame* the articles I
-reviewed (as well as those I wrote) were in term of experimental
-methodology.
-+ Yeah, I know, your method/algorithm is better than the others as
-  demonstrated by the figures
-+ Not enough information to *discriminate real effects from noise*
-+ Little information about the *workload*.  Would the ``conclusion''
-  still hold with a slightly different workload?
-+ I got tired of awful combination of tools (perl, gnuplot, sql, ...)
-  and *bad methodology*
-
-I got sick of struggling in vain when trying to build on the work of
-others
-* The Reproducible Research Movement
-** How does it work in "real" sciences?
-*** A few Words on Scientific Foundation                         :noexport:
-- *Falsifiability* or *refutability* of a statement, hypothesis, or
-  theory is an inherent possibility to prove it to be false (not
-  "/commit fraud/" but "/prove to be false/").
-- Karl Popper makes falsifiability the demarcation criterion to
-  *distinguish the scientific from the unscientific*
-
-  #+BEGIN_QUOTE
-  It is not only not right, it is not even wrong!
-
-  -- Wolfgang Pauli
-  #+END_QUOTE
-- Theories cannot be proved correct but they can be disproved. Only a
-  few stand the test of batteries of *critical experiments*.
-- It is not all black and white. There are many stories where
-  scientists stick with their theories despite evidences and
-  sometimes, they were even right to do so...
-#+BEGIN_CENTER
-  *Testing and checking is thus one of the basis of science*
-#+END_CENTER
-
-Further readings: *A Summary of Scientific Method*, Peter Kosso,
-Springer
-*** Is Fraud a new phenomenon?
-#+BEGIN_LaTeX
-  \begin{columns}
-    \begin{column}{.4\linewidth}
-      \includegraphics[width=\linewidth]{images/CNRS_CIM_36_biomed_fraud.png}
-    \end{column}
-    \begin{column}{.6\linewidth}
-   
-      \begin{center}
-        \includegraphics[width=.7\linewidth]{images/CNRS_CIM_36_scientists.pdf}
-      \end{center}
-
-#+END_LaTeX
-
-- Galileo (data fabrication), Ptolemy (plagiarism), Mendel (data
-  enhancement), [[http://lascienceenfraude.blogspot.fr/2012/05/limposture-de-pasteur.html][Pasteur]] (rigorous but hid failures), ...
-#+BEGIN_LaTeX
-    \end{column}
-  \end{columns}
-#+END_LaTeX
-** Reproducible Research/Open Science
-*** But do we \textbf{really} have to care in CS?
-\small *Yes*. \textbf{Model $\neq$ Reality}. Although designed and built by human
-beings, computers are *so complex* that mistakes are easy to do...
-
-- *Experiments*: Mytkowicz, Diwan, Hauswirth, Sweeney. *[[http://doi.acm.org/10.1145/1508284.1508275][Producing wrong
-  data without doing anything obviously wrong]]!*. SIGPLAN Not. 44(3),
-  March 2009
-#+BEGIN_LaTeX
-\vspace{-.5em}
-\begin{overlayarea}{\linewidth}{3.8cm}
-\vspace{-.5em}
-\begin{center}
-\includegraphics<+>[width=.52\linewidth]{images/asplos09-producing-data_fig1.pdf}%
-\includegraphics<+>[width=.52\linewidth]{images/asplos09-producing-data_fig2.pdf}%
-\only<+->{
-\begin{columns}
-  \begin{column}{.6\linewidth}
-    \includegraphics[width=\linewidth]{images/phdcomic.pdf}%
-  \end{column}\hspace{-2em}
-  \begin{column}{.35\linewidth}
-    C.S. suffers from the same difficulties
-    as natural sciences\\[-1em]
-    \begin{itemize}
-    \item Rely on large, distributed, \alert{evolving}, prototype
-       hard/software
-    \item Validation on a few datasets/scenarios? \frowny
-    \end{itemize}
-  \end{column}
-\end{columns}}
-\end{center}
-\end{overlayarea}
-\vspace{-2em}
-\uncover<+->{
-#+END_LaTeX
-- *Statistics*: [[http://www.economist.com/news/briefing/21588057-scientists-think-science-self-correcting-alarming-degree-it-not-trouble][Trouble at the lab]], The Economist 2013\newline
-  #+BEGIN_QUOTE
-  \vspace{-.4em}
-  According to some estimates, three-quarters of published scientific
-  papers in the field of machine learning are bunk because of this
-  "overfitting". \hfill Sandy Pentland, MIT
-  \vspace{-.8em}
-  #+END_QUOTE
-- *[[http://arxiv.org/abs/1312.3300][Numerical reproducibility]]*: simulated results are often non
-  reproducible when moving from a platform to another or exploiting
-  parallel architectures
-#+LaTeX: }
-**** Key principles of experiment design                        :noexport:
-- *Randomize* to *reduce bias* \vspace{-.5em}
-- *Replicate* (possibly in a smart way) to *increase reliability*
-  \vspace{-.5em}
-- Takes a few lectures on *Design of Experiments* to improve. Start by
-  reading *Jain's book on The Art of Computer Systems Performance
-  Analysis*
-*** Reproducible Research: the New Buzzword?
-**** H2020-EINFRA-2014-2015
-#+BEGIN_QUOTE
-A key element will be capacity building to link literature and data in
-order to enable a more transparent evaluation of research and
-*reproducibility* of results.
-#+END_QUOTE
-**** More and more workshops
-#+LaTeX: \scriptsize
-- [[http://www.eecg.toronto.edu/~enright/wddd/][Workshop on Duplicating, Deconstructing and Debunking (WDDD)]]  (2002-[[https://sites.google.com/site/iscawddd/][2016 edition]])
-- \normalsize *[[http://www.stodden.net/AMP2011/][AMP Workshop. Reproducible Research: Tools and Strategies for Scientific
-  Computing]]* \scriptsize(2011)
-- [[http://wssspe.researchcomputing.org.uk/][Working towards Sustainable Software for Science: Practice and
-  Experiences]] (2013)
-- *[[http://reppar.org/][REPPAR'16: 3rd International Workshop on Reproducibility in
-  Parallel Computing]]*
-- [[https://www.xsede.org/web/reproducibility][Reproducibility@XSEDE: An XSEDE14 Workshop]]
-- [[http://www.occamportal.org/reproduce][Reproduce/HPCA 2014]]
-  #+LaTeX: \item \href{http://www.ctuning.org/cm/wiki/index.php?title\%3DEvents:TRUST2014}{TRUST 2014, 2015}
-- [[http://web.stanford.edu/~vcs/talks/SC15-Nov182015-STODDEN.pdf][Talk at SC by V. Stodden a few months ago]]
-
-\normalsize 
-Should be seen as *opportunities to share experience*
-*** Reproducibility: What Are We Talking About?
-*1934*: Karl Popper introduces the notion of *falsifiability* and *crucial
-experiment* and puts *reproducing the work of others* at the core of
-science
-
-Short introduction: *[[http://hemija.pmf.ukim.edu.mk/materials/download/6d31fd3f53a82da9de163833806722ae][A Summary of Scientific Method]]*, Peter Kosso,
-Springer
-
-#+BEGIN_QUOTE
-Reproducibility of experimental results is the hallmark of science
-\vspace{-.3em} \flushright [[[http://www.site.uottawa.ca/ICML09WS/papers/w2.pdf][Drummond, 2009]]]
-#+END_QUOTE
-\pause
-
-#+BEGIN_LaTeX
-\begin{center}
-  \vspace{-.3em} 
-  \dangersign[3ex] \textbf{Terminology varies} \dangersign[3ex]%
-\end{center}
-
-\small Repetition, replication, variation, reproduction, corroboration (\href{http://mescal.imag.fr/arnaud.legrand/readings/acm_sigops_si_rsea/p3-feitelson.pdf}{Feitelson, 2015})
-  
-But also \href{http://www.bipm.org/en/publications/guides/vim.html}{International Vocabulary of Metrology, JCGM 200:2012} is inspiring ACM
-\normalsize
-  
-\includegraphics[width=\linewidth]{images/repro_fig2.pdf}
-\vspace{-.6em}
-
-\begin{flushright}
-  \scriptsize \emph{Inspired by Andrew Davison (AMP Workshop on
-    Reproducible research)}
-\end{flushright}
-\vspace{-.6em}
-#+END_LaTeX
-
-
-*** Reproducibility: What Are We Talking About?                    :noexport:
-#+BEGIN_LaTeX
-\vspace{-.6em}
-\begin{overlayarea}{\linewidth}{9cm}
-\hbox{\hspace{-.05\linewidth}\includegraphics[page=5,width=1.1\linewidth]{pdf_sources/sumatra_amp2011.pdf}}
-
-\vspace{-2cm}
-\begin{flushright}
-  {\scriptsize Courtesy of Andrew Davison (AMP Workshop on Reproducible research)}
-\end{flushright}
-\end{overlayarea}
-#+END_LaTeX
-*** Reproducible Research: Trying to Bridge the Gap
-#+BEGIN_LaTeX
-  \hbox{\hspace{-.05\linewidth}%
-  \includegraphics<1>[width=1.07\linewidth]{fig/author_reader_rr_1.fig}%
-  \includegraphics<2>[width=1.07\linewidth]{fig/author_reader_rr_2.fig}%
-  \includegraphics<3>[width=1.07\linewidth]{fig/author_reader_rr_3.fig}%
-  \includegraphics<4>[width=1.07\linewidth]{fig/author_reader_rr_4.fig}%
-  \hspace{-.05\linewidth}}
-\vspace{-.4cm}
-\begin{flushright}
-{\scriptsize {\textbf{Inspired by Roger D. Peng's lecture on reproducible research, May 2014}}}
-\end{flushright}
-
-In this series of lectures, we'll go from right to left and see how we can improve.
-#+END_LaTeX
-*** Science vs. Screwing Around (Mythbusters \textcolor{black}{\winkey}) :B_frame:
-    :PROPERTIES:
-    :BEAMER_env: frame
-    :BEAMER_OPT: plain
-    :END:
-
-#+BEGIN_LaTeX
-\begin{overlayarea}{\linewidth}{0cm}
-\vspace{-4cm}
-\hbox{\hspace{-.1\linewidth}\includegraphics[width=1.2\linewidth,height=9cm]{images/remember_kids.jpg}}
-\end{overlayarea}
-#+END_LaTeX
-** Illustrating Nice Ideas Through Different Tools
-*** Vistrails: a Workflow Engine for Provenance Tracking
-#+BEGIN_LaTeX
-\vspace{-.6em}
-\begin{overlayarea}{\linewidth}{9cm}
-\hbox{\hspace{-.05\linewidth}%
-\includegraphics<+>[page=14,width=1.1\linewidth]{pdf_sources/2011-amp-reproducible-research.pdf}%
-\includegraphics<+>[page=15,width=1.1\linewidth]{pdf_sources/2011-amp-reproducible-research.pdf}%
-}
-
-\vspace{-2cm}
-\begin{flushright}
-  {\scriptsize Courtesy of Juliana Freire (AMP Workshop on
-    Reproducible research)}
-\end{flushright}
-\end{overlayarea}
-#+END_LaTeX
-*** VCR: A Universal Identifier for Computational Results
-#+BEGIN_LaTeX
-\vspace{-.6em}
-\begin{overlayarea}{\linewidth}{9cm}
-\hbox{\hspace{-.05\linewidth}%
-\includegraphics<+>[page=76,width=1.1\linewidth]{pdf_sources/amp-ver1MATAN.pdf}%
-\includegraphics<+>[page=78,width=1.1\linewidth]{pdf_sources/amp-ver1MATAN.pdf}%
-\includegraphics<+>[page=113,width=1.1\linewidth]{pdf_sources/amp-ver1MATAN.pdf}%
-\includegraphics<+>[page=26,width=1.1\linewidth]{pdf_sources/amp-ver1MATAN.pdf}%
-}
-
-\vspace{-2cm}
-\begin{flushright}
-  {\scriptsize Courtesy of Matan Gavish and David Donoho (AMP Workshop on
-    Reproducible research)}
-\end{flushright}
-\end{overlayarea}
-#+END_LaTeX 
-*** Sumatra: an "experiment engine" that helps taking notes
-#+BEGIN_LaTeX
-\vspace{-.6em}
-\begin{overlayarea}{\linewidth}{9cm}
-\hbox{\hspace{-.05\linewidth}%
-\includegraphics<+>[page=35,width=1.1\linewidth]{pdf_sources/sumatra_amp2011.pdf}%
-\includegraphics<+>[page=39,width=1.1\linewidth]{pdf_sources/sumatra_amp2011.pdf}%
-\includegraphics<+>[page=40,width=1.1\linewidth]{pdf_sources/sumatra_amp2011.pdf}%
-\includegraphics<+>[page=46,width=1.1\linewidth]{pdf_sources/sumatra_amp2011.pdf}%
-}
-
-\vspace{-2cm}
-\begin{flushright}
-  {\scriptsize Courtesy of Andrew Davison (AMP Workshop on
-    Reproducible research)}
-\end{flushright}
-\end{overlayarea}
-#+END_LaTeX
-*** Ipython/Jupyter Notebook
-*Web app*: create and share documents that contain live code, equations,
-visualizations, and \\
-explanatory text\vspace{-2.8em}
-#+LaTeX: \begin{flushright}
-#+ATTR_LaTeX: :width .93\linewidth
-file:images/jupyterpreview.png
-#+LaTeX: \end{flushright}
-*** Reprozip
-Automagically pack your experiment to fight *dependency hell*
-#+BEGIN_CENTER
-#+ATTR_LaTeX: :width .93\linewidth
-file:images/reprozip.png
-#+END_CENTER
-*** So many new tools
-#+BEGIN_LaTeX
-\vspace{-.6em}
-\begin{overlayarea}{\linewidth}{9cm}
-\hbox{\hspace{-.05\linewidth}%
-\includegraphics[page=13,width=1.1\linewidth]{pdf_sources/DavisFeb132014-STODDEN.pdf}%
-}
-\vspace{-1.5cm}
-\begin{flushright}
-  {\scriptsize {\textbf{Courtesy of Victoria Stodden (UC Davis, Feb 13, 2014)}}}
-\end{flushright}
-\vspace{.6cm}
-And also: \textbf{Org-Mode \smiley}, \textbf{Figshare}, \textbf{Zenodo}, \textbf{ActivePapers \smiley}, \textbf{Elsevier executable paper \frowny}, ...
-\end{overlayarea}
-#+END_LaTeX 
-** And In Practice?
 *** A Difficult Trade-off
 #+BEGIN_CENTER
 \vspace{-.2em}Many different tools/approaches developed in various communities\vspace{-.2em}
 #+END_CENTER
-*But mainly two approaches:* _Automatic_ vs. _Explicit_
+*But mainly two approaches:*
 - \textbf{Automatically keeping track of everything}
   - the code that was run (source code, libraries, compilation
     procedure)
@@ -891,114 +583,8 @@ And also: \textbf{Org-Mode \smiley}, \textbf{Figshare}, \textbf{Zenodo}, \textbf
 :END:
 
 #+LaTeX: \hspace{-2cm}\includegraphics[width=1.4\linewidth]{fig/author_reader_rr_4.fig}
-*** 3. Logging and backup your data
-What are the options?
-- Nothing $\frowny$ (remember the funny examples from the beginning... \winkey)
-- Incremental backup mechanisms (e.g., time machine)
-- The cloud! (e.g., Dropbox and Google Drive $\frowny$ ...)
-- Flexible version control systems (e.g. git $\smiley$) where you're in
-  control of what's happening
-  - Use a crontab if you really do not want to think about it
-  - We have come up with a specific [[https://hal.inria.fr/hal-01112795/document][git branching workflow]] for
-    managing experimental results
-*** 4. Organizing and managing your data
-- Use the machine readable *CSV format*
-- Provide *raw* data and *meta* data, not just statistical outputs
-- Organization
-  - Explain your conventions (e.g., =src/=, =data/=, =script/=, =journal.org=)
-  - Git submodules
-- *Never* do data manipulation and statistical tests *by hand* or with a
-  *spreadsheet* $\frowny$
-- *Use R*, Python or another free software to read and process raw
-  data.
-  - Use a workflow that *documents both data and process*
-  - The org-mode tangling mechanism may help
-*** 5. Mastering your environment
-What are the options?
-- Nothing \winkey No, it's not, you have to do something...
-- _Restrict your tools/dependencies_ to the bare minimum (e.g., python)
-  - List them all manually in a README
-  - Use [[https://github.com/inria-traces/trace.archive/blob/master/src/capture_metadata.sh][custom shell scripts]] or [[http://sos.readthedocs.org/][=sosreport=]] that _log all the
-    dependencies you are aware_. Ask your friends to check whether this
-    is sufficient...
-  - Combine everything in [[http://www.activepapers.org/][/activepapers/]], i.e., an HDFS5 file
-    combining datasets and programs working on these datasets in a
-    single package, along with meta data, history, ...
-- Create and distribute your own _virtual image_ (VM, docker,
-  [[http://gmkurtzer.github.io/singularity/][Singularity]])
-- Have tools that *automatically* keep track of dependencies/files
-  and packages up the Code, Data, and Environment 
-  - [[http://www.pgbovine.net/cde.html][CDE]] (Guo et al., 2011) [[https://vida-nyu.github.io/reprozip/][ReproZip]] (Freire et al., 2013), [[http://reproducible.io/][CARE]] (Janin
-    et al., 2014), 
-  - See [[http://ccl.cse.nd.edu/research/papers/techniques-ipres-2015.pdf][Preserve the Mess or Encourage Cleanliness?]] (Thain et al., 2015)
-- Use a specific tool to _generate customized *appliances*_ (kvm, LXC,
-  Virtualbox, iso, ...): *recipes* with *steps* and *aliases*, execution in
-  *contexts*, *checkpoints*, ... ([[http://kameleon.imag.fr/][/Kameleon/]])
-*** 6. Controlling your experiments
-- Naive way: sh + ssh + ... 
-- Better way: use a *workflow management system* ([[http://www.taverna.org.uk/][taverna]], [[https://galaxyproject.org/][galaxy]],
-  [[https://kepler-project.org/][kepler]], [[http://www.vistrails.org/][vistrails]], ...)
-- Parallel/distributed experiments require specific experiment engines
-  #+BEGIN_LaTeX
-  \setbeamertemplate{itemize items}[triangle]
-  \vspace{-1.5em}
-  \begin{columns}[t]
-    \begin{column}{.65\linewidth}
-     \begin{itemize}
-     \item \alert<1>{\href{http://expo.gforge.inria.fr}{Expo}} (2007-,
-       G5K)
-     \item \alert<1>{\href{http://xpflow.gforge.inria.fr}{XPflow}}
-       (2012-, G5K)
-       \begin{overlayarea}{3cm}{0cm}
-         \vspace{-2.5\baselineskip} $\left\}\begin{array}{l}
-             \text{\phantom{X}}\\\text{\phantom{X}}\\\text{\phantom{X}}
-           \end{array}\right.\hspace{-.7cm}
-         \begin{array}{l}
-           \text{although nothing} \\ \text{specific to G5K}
-         \end{array}$
-       \end{overlayarea}
-     \item \alert<1>{\href{http://execo.gforge.inria.fr}{Execo}}
-       (2013-, G5K) \medskip
-     \end{itemize}
-    \end{column}\hspace{-1.3cm}
-    \begin{column}{.4\linewidth}
-      \begin{itemize}
-      \item Plush (2006-, Planetlab)
-      \item OMF (2009-, Wireless)
-      \item Splay (2008), \dots
-      \end{itemize}
-    \end{column}
-  \end{columns}
-  \setbeamertemplate{itemize items}[circle]
-  #+END_LaTeX
-  They differ in the underlying paradigms and the platforms for which
-  they have been designed
-  #+LaTeX: \begin{flushright}\small
-  [[https://hal.inria.fr/hal-01087519/document][A survey of general-purpose experiment management tools for
-  distributed systems]], T. Buchert, C. Ruiz, L. Nussbaum, O. Richard,
-  FGCS, 2014
-  #+LaTeX: \end{flushright}
-- Control your \textbf{numerical results} (random generators,
-  libraries, rounding and non-determinism, \dots)
-*** 7. Making your data/code/article available
-- Your webpage $\frowny$
-- Figshare, Zenodo $\smiley$, ...
-- Companion websites ([[https://www.elsevier.com/physical-sciences/computer-science/share-a-web-portal-for-creating-and-sharing-executable-research][elsevier executable paper]] $\frowny$,
-  [[http://www.runmycode.org/][runmycode]], \newline [[http://www.execandshare.org/CompanionSite/][exec&share]] $\smiley$, ...)
-- Github (damn, they're good! $\smiley$), ...
 
-This may seem easy but is more tricky than it looks like:
-- Arbitrary limits can make your life painful
-- Perennity ([[http://mescal.imag.fr/membres/arnaud.legrand/blog/2015/12/03/roberto_di_cosmo.pdf][Roberto Di Cosmo]]'s talk at R$^4$)
-  - CodeSpaces murdered on Amazon, Google Code termination, Gitorious
-    shutdown, ...
-  - Disruption of the web of reference: URLs decay (half-life of 4
-    years), DOIs have little guarantee, ...
-Many *legal aspects* about data/code/idea sharing
-  - I am a civil servant and I strongly believe research is a team
-    sport
-  - Intellectual property is an important topic we do not want to
-    leave to bureaucrats and lawyers...
+
 *** Remember the general picture
 #+LaTeX: \vspace{-.35em}\begin{columns}\begin{column}{.5\linewidth}\hspace{-1em}
   #+ATTR_LaTeX: :width \linewidth 
@@ -1018,16 +604,16 @@ I'm way too =3l33t= to program this way \winkey but that's \\
 #+END_CENTER
 #+LaTeX: \vspace{-.5em}
 
-**** \small KnitR (a.k.a. Sweave)
-For R and +emacs+ users. Easy replicable articles with a modern IDE
-(e.g., [[https://www.rstudio.com/][Rstudio]])
-**** \small Ipython/Jupyter notebook
-Python user $\leadsto$ go for [[http://jupyter.org/][Jupyter]]. Web app, easy to
-use/setup... Writing replicable article may be tricky though
 **** \small Org-mode (my favorite! requires emacs though)
 # My favorite tool\vspace{-.5em}
 - [[http://orgmode.org/][Org-mode]] is plain text, very smooth, works both for html, pdf, ...\vspace{-.5em}
 - Allows to combine all my favorite languages
+**** \small Ipython/Jupyter notebook
+Python user $\leadsto$ go for [[http://jupyter.org/][Jupyter]]. Web app, easy to
+use/setup... Writing replicable article may be tricky though
+**** \small KnitR (a.k.a. Sweave)
+For R and +emacs+ users. Easy replicable articles with a modern IDE
+(e.g., [[https://www.rstudio.com/][Rstudio]])
 ****                                                     :B_ignoreheading:
 :PROPERTIES:
 :BEAMER_env: ignoreheading
@@ -1055,12 +641,9 @@ Here are the following important features to exploit:
   - Dependencies can be expressed
   - Caching mechanism
   - Side effects are the enemy of reproducibility
-
 *** 2. Logging your activity \qquad (Laboratory Notebook)
-_Do not tie your hands with non-free software like Evernote or OneNote_
-
-\small
-# - [[http://jupyter.org/][Ipython/Jupyter]] notebook like in Mathematica
+\small Pionneered by Mathematica (TBOMK)
+- [[http://jupyter.org/][Jupyter]] project (formerly known as the IPython notebook)
 - [[http://orgmode.org/][Org-mode]] again!
   - Capture mechanism (notes, todo, ...)
   - Babel favors code reuse, ssh connections in sessions,
@@ -1081,7 +664,8 @@ I have a very intense usage and so do all my master/PhD students
   deployment, ...). It is generally the perfect time for improving
   your notes (e.g., detail the steps to accomplish a TODO entry)\vspace{-.5em}
 - *By the end of the day*: daily (and weekly) *review!* \vspace{-.5em}
-  - Update your lists, decide the next steps, summarize what you did/learnt,...
+  - Update your lists, decide the next steps, summarize what you
+    did/learnt,...
 *** Pros and Cons of these three tools
 - Ipython notebook:
   - $\smiley$ Easy to set up, user-friendly, machine readable format (JSON),
@@ -1099,6 +683,124 @@ I have a very intense usage and so do all my master/PhD students
 
 The ultimate tool would combine an engine in an editor that allows
 collaborative interactive edition
+*** 3. Logging and backup your data
+What are the options?
+- Nothing $\frowny$ (remember the funny examples from the beginning... \winkey)
+- Incremental backup mechanisms (e.g., time machine)
+- The cloud! (e.g., Dropbox and Google Drive $\frowny$ ...)
+- Flexible version control systems (e.g. git $\smiley$) where you're in
+  control of what's happening
+  - Use a crontab if you really do not want to think about it
+  - We have come up with a specific [[https://hal.inria.fr/hal-01112795/document][git branching workflow]] for
+    managing experimental results
+*** 4. Organizing your data
+- Use the machine readable *CSV format*
+- Provide *raw* data and *meta* data, not just statistical outputs
+- Organization
+  - Explain your conventions (e.g., =src/=, =data/=, =script/=, =journal.org=)
+  - Git submodules
+- *Never* do data manipulation and statistical tests *by hand*
+- *Use R*, Python or another free software to read and process raw
+  data.
+  - Use a workflow that *documents both data and process*
+  - The org-mode tangling mechanism may help
+*** 5. Mastering your environment
+What are the options?
+- Nothing \winkey
+- _Restrict your tools/dependencies_ to the bare minimum (e.g., python)
+  - List them all manually in a README
+  - Use [[https://github.com/inria-traces/trace.archive/blob/master/src/capture_metadata.sh][custom shell scripts]] or [[http://sos.readthedocs.org/][=sosreport=]] that _log all the
+    dependencies you are aware_. Ask your friends to check whether this
+    is sufficient...
+  - Combine everything in [[http://www.activepapers.org/][/activepapers/]], i.e., an HDFS5 file
+    combining datasets and programs working on these datasets in a
+    single package, along with meta data, history, ...
+- Create and distribute your own _virtual image_ (VM, docker,
+  [[http://gmkurtzer.github.io/singularity/][Singularity]])
+- Have tools that *automatically* keep track of dependencies/files
+  and packages up the Code, Data, and Environment 
+  - [[http://www.pgbovine.net/cde.html][CDE]] (Guo et al., 2011) [[https://vida-nyu.github.io/reprozip/][ReproZip]] (Freire et al., 2013), [[http://reproducible.io/][CARE]] (Janin
+    et al., 2014), 
+  - See [[http://ccl.cse.nd.edu/research/papers/techniques-ipres-2015.pdf][Preserve the Mess or Encourage Cleanliness?]] (Thain et al., 2015)
+- Use a specific tool to _generate customized *appliances*_ (kvm, LXC,
+  Virtualbox, iso, ...): *recipes* with *steps* and *aliases*, execution in
+  *contexts*, *checkpoints*, ... ([[http://kameleon.imag.fr/][/Kameleon/]])
+*** 6. Controlling your experiments
+- Naive way: sh + ssh + ... \medskip\\
+  _Parallel/distributed experiments differ from computational science
+  and come with their own difficulties_
+  #+BEGIN_LaTeX
+  \item \alert<1>{\href{http://expo.gforge.inria.fr}{Expo}} (2007-, G5K)
+  \item \alert<1>{\href{http://xpflow.gforge.inria.fr}{XPflow}} (2012-, G5K)
+  \begin{overlayarea}{3cm}{0cm}
+  \vspace{-2.5\baselineskip}
+  $\left\}\begin{array}{l}
+   \text{\phantom{X}}\\\text{\phantom{X}}\\\text{\phantom{X}}
+   \end{array}\right.\hspace{-.7cm}
+   \begin{array}{l}
+   \text{although nothing} \\ \text{specific to G5K}
+   \end{array}$
+  \end{overlayarea}
+  \item \alert<1>{\href{http://execo.gforge.inria.fr}{Execo}} (2013-, G5K) \medskip
+  #+END_LaTeX
+- Plush (2006-, PlanetLab)
+- OMF (2009-, Wireless testbeds and Planetlab)
+- Splay (2008, distributed algorithm comparison), ...
+
+They differ in the underlying paradigms and the platforms for which
+they have been designed
+
+- [[https://hal.inria.fr/hal-01087519/document][A survey of general-purpose experiment management tools for
+  distributed systems]], T. Buchert, C. Ruiz, L. Nussbaum, O. Richard,
+  FGCS, 2014
+*** 7. Making your data/code/article available
+- Your webpage $\frowny$
+- Figshare, Zenodo $\smiley$, ...
+- Companion websites ([[https://www.elsevier.com/physical-sciences/computer-science/share-a-web-portal-for-creating-and-sharing-executable-research][elsevier executable paper]] $\frowny$,
+  [[http://www.runmycode.org/][runmycode]], \newline [[http://www.execandshare.org/CompanionSite/][exec&share]] $\smiley$, ...)
+- Inria Forge/Gitlab, Github (damn, they're good! $\smiley$), ...
+
+This may seem easy but is more tricky than it looks like:
+- Arbitrary limits can make your life painful
+- Perennity ([[http://mescal.imag.fr/membres/arnaud.legrand/blog/2015/12/03/roberto_di_cosmo.pdf][Roberto Di Cosmo]]'s talk at R$^4$)
+  - CodeSpaces murdered on Amazon, Google Code termination, Gitorious
+    shutdown, ...
+  - Disruption of the web of reference: URLs decay (half-life of 4
+    years), DOIs have little guarantee, ...
+
+*** TODO
+- Colocar links: para artigo reprodutivel do arnaud e meu; links pros
+  seminarios e aulas do Arnaud...
+
+
+
+*** My Feeling                                                   :noexport:
+Computer scientists have an incredibly *poor training in
+probabilities, statistics, experiment management*, *Design of Experiments*
+  
+\medskip
+
+Why should we? Computer are *deterministic* machines after all, right?
+\winkey
+
+\medskip
+
+Ten years ago, I've started realizing how *lame* the articles I
+reviewed (as well as those I wrote) were in term of experimental
+methodology.
++ Yeah, I know, your method/algorithm is better than the others as
+  demonstrated by the figures
++ Not enough information to *discriminate real effects from noise*
++ Little information about the *workload*.  Would the ``conclusion''
+  still hold with a slightly different workload?
++ I got tired of awful combination of tools (perl, gnuplot, sql, ...)
+  and *bad methodology*
+
+I got sick of struggling in vain when trying to build on the work of
+others
+* The Reproducible Research Movement
+
+
 * Where are we now?
 ** 
 *** Outline
