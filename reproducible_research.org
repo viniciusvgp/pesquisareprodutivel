@@ -834,13 +834,13 @@ I think the change has to be profound and *cannot be top-down*\small
 #+END_CENTER
 
 *** Next steps
-_ Examples of reproducible articles with Org-mode:
-  - [[http://ieeexplore.ieee.org/document/7384330/][Fast and Accurate Simulation of Multithreaded Sparse Linear
+**** Examples of reproducible articles with Org-mode:
+- [[http://ieeexplore.ieee.org/document/7384330/][Fast and Accurate Simulation of Multithreaded Sparse Linear
     Algebra Solvers]] at ICPADS 2015. [[https://scm.gforge.inria.fr/anonscm/gitweb/?p=starpu-simgrid/QRMSTARPUSG15.git;a=tree][Reproducible version.]]
-  - [[http://dl.acm.org/citation.cfm?id=3019118][Analyzing dynamic task-based applications on hybrid platforms: an
+- [[http://dl.acm.org/citation.cfm?id=3019118][Analyzing dynamic task-based applications on hybrid platforms: an
     agile scripting approach]] at VPA/SC 2016. [[https://github.com/viniciusvgp/vpa2016][Reproducible version.]]
-- Series of webinars on Reproducible Research:
-  [[https://github.com/alegrand/RR_webinars]]
+**** Series of webinars on Reproducible Research:
+  Slides and Videos: [[https://github.com/alegrand/RR_webinars]]
 **** Contact:
 - Arnaud Legrand: arnaud.legrand@inria.fr
 - Lucas Mello Schnorr: schnorr@inf.ufrgs.br
