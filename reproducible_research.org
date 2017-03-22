@@ -123,7 +123,7 @@ Nutrition/, 2013.
    \vspace{-1.2cm}~\begin{flushright}\scriptsize \bf (Translated) Courtesy of Enric Meinhardt-Llopis, CANUM 2016\end{flushright}
    \pause
    #+END_LaTeX
-3. Have you ever had trouble reproducing the work of one of your colleague (or even your own work \winkey)?
+3. Have you ever had trouble reproducing the work of one of your colleagues (or even your own work \winkey)?
    
 *** Frustration
 _*As an Author*_
