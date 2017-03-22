@@ -113,7 +113,6 @@ Nutrition/, 2013.
 #+LaTeX:}
 #+LaTeX: \end{overlayarea}
 
-
 *** Quick poll
 1. Have you ever tried to reproduce some research results ? \pause
 2. Have you ever failed ? \pause
@@ -147,7 +146,8 @@ _*As a Reviewer*_ This may be an interesting contribution but:
     to show only a *subset of the data*. I wonder what the rest looks
     like
   - It this improvement *solely the result of this naive idea*?
-* TODO computer science
+* What about Computer Science ?
+#+LaTeX: \begin{frame}{Outline}\tableofcontents[current]\end{frame}
 *** A Few Edifying Examples
 #+BEGIN_LaTeX
   \begin{columns}
@@ -165,68 +165,7 @@ _*As a Reviewer*_ This may be an interesting contribution but:
   \end{columns}
 
   \bottomcite{Collberg, Christian \textit{et Al.}, 
-     \href{http://reproducibility.cs.arizona.edu/v2/RepeatabilityTR.pdf}{\textit{Measuring Reproducibility in Computer Systems Research}},
-    \url{http://reproducibility.cs.arizona.edu/}\qquad 2014,2015} 
-
-  \begin{columns}
-    \begin{column}{.5\linewidth}
-      ~\hspace{-1.7em}\includegraphics[height=4.7cm]{images/repeatability_arizona.pdf}
-    \end{column}
-    \begin{column}{.5\linewidth}
-      \small
-      \begin{itemize}
-      \item 8 ACM conferences ({\scriptsize ASPLOS'12, CCS'12, OOPSLA'12, OSDI'12,
-        PLDI'12, SIGMOD'12, SOSP'11, VLDB'12}) and 5 journals
-      \item Original study = 80\% of non reproducible work
-      \item 
-        $\text{EM}^{\text{no}}$= \alert{the code cannot be provided}
-      \end{itemize}
-    \end{column}
-  \end{columns}
-#+END_LaTeX
-
-*** Why Are Scientific Studies so Difficult to Reproduce?
-*Human error*:
-- Experimenter *bias* ([[http://www.nature.com/news/crowdsourced-research-many-hands-make-tight-work-1.18508][crowdsourced research?]])
-- Programming *errors* or data manipulation *mistakes*
-- Poorly selected statistical test
-# ([[https://aom.org/uploadedFiles/Publications/AMJ/Apr_2014_FTE.pdf][especially with Big Data]], Journal: Academy of Management 2014)
-\medskip
-
-*There is just no real incentive in doing so*:
-- Legal barriers, *copyright* (/[[http://web.stanford.edu/~vcs/talks/SC15-Nov182015-STODDEN.pdf][many ongoing thoughts on this in the
-  US]]/)
-- *Competition* issue (/researchware/, bibliometry, ...)
-- Publication *bias* (only the idea matters, not the gory details)
-- Rewards for *positive results*, not for consolidating results
-\medskip
-
-*Technical difficulty*:
-- +*Hardware and software evolve too quickly. It's not worth it*+
-- +*No resources for storing somuch data/information*+
-- +*Lack of easy-to-use tools*+
-
-- PAREI AQUI
-*** TODO
-
-*** A Few Edifying Examples
-#+BEGIN_LaTeX
-  \begin{columns}
-    \begin{column}{.67\linewidth}
-      \bottomcite{Naicken, Stephen \textit{et Al.}, \textit{Towards Yet
-          Another Peer-to-Peer Simulator}, HET-NETs'06.}\medskip\\
-      \small
-      From 141 P2P sim.papers, 30\% use a custom tool, \alert{50\% don't report
-      used tool}\\ \medskip
-
-    \end{column}
-    \begin{column}{.33\linewidth}
-      \includegraphics[width=\linewidth]{images/naicken.pdf}
-    \end{column}
-  \end{columns}
-
-  \bottomcite{Collberg, Christian \textit{et Al.}, 
-     \href{http://reproducibility.cs.arizona.edu/v2/RepeatabilityTR.pdf}{\textit{Measuring Reproducibility in Computer Systems Research}},
+     \href{http://reproducibility.cs.arizona.edu/v2/RepeatabilityTR.pdf}{Measuring Reproducibility in Computer Systems Research},
     \url{http://reproducibility.cs.arizona.edu/}\qquad 2014,2015} 
 
   \begin{columns}
@@ -370,6 +309,139 @@ _*As a Reviewer*_ This may be an interesting contribution but:
   \end{block}
   \null\vspace{-.4cm}
 #+END_LaTeX
+*** But do we \textbf{really} have to care in CS?
+\small *Yes*. \textbf{Model $\neq$ Reality}. Although designed and built by human
+beings, computers are *so complex* that mistakes are easy to do...
+
+- *Experiments*: Mytkowicz, Diwan, Hauswirth, Sweeney. *[[http://doi.acm.org/10.1145/1508284.1508275][Producing wrong data without doing anything obviously wrong]]!*. SIGPLAN Not. 44(3),
+  March 2009
+#+BEGIN_LaTeX
+\vspace{-.5em}
+\begin{overlayarea}{\linewidth}{3.8cm}
+\vspace{-.5em}
+\begin{center}
+\includegraphics<+>[width=.52\linewidth]{images/asplos09-producing-data_fig2.pdf}%
+\only<+->{
+\begin{columns}
+  \begin{column}{.55\linewidth}
+    \includegraphics[width=\linewidth]{images/phdcomic.pdf}%
+  \end{column}\hspace{-2em}
+  \begin{column}{.4\linewidth}
+    C.S. suffers from the same difficulties
+    as natural sciences\\
+    \begin{itemize}
+    \item Rely on large, distributed, \alert{evolving}, prototype
+       hard/software
+    \item Validation on a few datasets/scenarios? \frowny
+    \end{itemize}
+  \end{column}
+\end{columns}}
+\end{center}
+\end{overlayarea}
+\vspace{-2.5em}
+\uncover<+->{
+#+END_LaTeX
+- *Statistics*: [[http://www.economist.com/news/briefing/21588057-scientists-think-science-self-correcting-alarming-degree-it-not-trouble][Trouble at the lab]], The Economist 2013\newline
+  #+BEGIN_QUOTE
+  \vspace{-.5em}
+  According to some estimates, three-quarters of published scientific
+  papers in the field of machine learning are bunk because of this
+  "overfitting". \hfill Sandy Pentland, MIT
+  \vspace{-.8em}
+  #+END_QUOTE
+- *[[http://arxiv.org/abs/1312.3300][Numerical reproducibility]]*: simulated results are often non
+  reproducible when moving from a platform to another or exploiting
+  parallel architectures
+#+LaTeX: }
+**** Key principles of experiment design                        :noexport:
+- *Randomize* to *reduce bias* \vspace{-.5em}
+- *Replicate* (possibly in a smart way) to *increase reliability*
+  \vspace{-.5em}
+- Takes a few lectures on *Design of Experiments* to improve. Start by
+  reading *Jain's book on The Art of Computer Systems Performance
+  Analysis*
+*** All I care about is the algorithm output
+Did I mention we have *parallel machines* nowadays? $\winkey$
+
+#+BEGIN_LaTeX
+\begin{overlayarea}{\linewidth}{7cm}
+  \begin{center}
+    \includegraphics<+>[width=.9\linewidth, page=13]{pdf_sources/langlois.pdf}%
+    \includegraphics<+>[width=.9\linewidth, page=14]{pdf_sources/langlois.pdf}%
+    \includegraphics<+>[width=.9\linewidth, page=15]{pdf_sources/langlois.pdf}%
+    \includegraphics<+>[width=.9\linewidth, page=16]{pdf_sources/langlois.pdf}%
+    \includegraphics<+>[width=.9\linewidth, page=17]{pdf_sources/langlois.pdf}%
+    \includegraphics<+>[width=.9\linewidth, page=18]{pdf_sources/langlois.pdf}%
+    \includegraphics<+>[width=.9\linewidth, page=19]{pdf_sources/langlois.pdf}%
+    \includegraphics<+>[width=.9\linewidth, page=20]{pdf_sources/langlois.pdf}%
+    \includegraphics<+>[width=.9\linewidth, page=21]{pdf_sources/langlois.pdf}%
+    \includegraphics<+>[width=.9\linewidth, page=22]{pdf_sources/langlois.pdf}%
+    \includegraphics<+>[width=.9\linewidth, page=23]{pdf_sources/langlois.pdf}%
+    \includegraphics<+>[width=.9\linewidth, page=24]{pdf_sources/langlois.pdf}%
+    \includegraphics<+>[width=.9\linewidth, page=25]{pdf_sources/langlois.pdf}%
+    \includegraphics<+>[width=.9\linewidth, page=26]{pdf_sources/langlois.pdf}%
+    \includegraphics<+>[width=.9\linewidth, page=27]{pdf_sources/langlois.pdf}%
+    \includegraphics<+>[width=.9\linewidth, page=28]{pdf_sources/langlois.pdf}%
+    \only<+>{
+      \begin{flushright}
+        \includegraphics[height=4cm]{images/langlois_malpasset.png}\vspace{-4cm}
+      \end{flushright}\bigskip
+      \begin{flushleft}
+        These numerical issues can become \\ quite harmful in real use
+        cases.
+      \end{flushleft}
+      \vspace{2cm}
+      }
+  \end{center}
+  \only<.>{
+  {\bf \alert{Numerical reproducibility?}}: Approximations in the model, in
+  in the algorithm, in its implementation, in its execution. \medskip
+
+  The whole chain needs to be revisited.}
+\end{overlayarea}
+\begin{flushright}\scriptsize Courtesy of P. Langlois and R. Nheili\end{flushright}
+#+END_LaTeX
+*** Why Are Scientific Studies so Difficult to Reproduce?
+*Human error*:
+- Experimenter *bias* ([[http://www.nature.com/news/crowdsourced-research-many-hands-make-tight-work-1.18508][crowdsourced research?]])
+- Programming *errors* or data manipulation *mistakes*
+- Poorly selected statistical test
+# ([[https://aom.org/uploadedFiles/Publications/AMJ/Apr_2014_FTE.pdf][especially with Big Data]], Journal: Academy of Management 2014)
+\medskip
+
+*There is just no real incentive in doing so*:
+- Legal barriers, *copyright* ([[http://web.stanford.edu/~vcs/talks/SC15-Nov182015-STODDEN.pdf][many ongoing thoughts on this in the US]])
+- *Competition* issue (/researchware/, bibliometry, ...)
+- Publication *bias* (only the idea matters, not the gory details)
+- Rewards for *positive results*, not for consolidating results
+\medskip
+
+*Technical difficulty*:
+- +*Hardware and software evolve too quickly. It's not worth it*+
+- +*No resources for storing somuch data/information*+
+- +*Lack of easy-to-use tools*+
+
+- PAREI AQUI
+
+*** Reproducible Research: Trying to Bridge the Gap
+#+BEGIN_LaTeX
+  \hbox{\hspace{-.05\linewidth}%
+  \includegraphics<1>[width=1.07\linewidth]{fig/author_reader_rr_1.fig}%
+  \includegraphics<2>[width=1.07\linewidth]{fig/author_reader_rr_2.fig}%
+  \includegraphics<3>[width=1.07\linewidth]{fig/author_reader_rr_3.fig}%
+  \includegraphics<4>[width=1.07\linewidth]{fig/author_reader_rr_4.fig}%
+  \hspace{-.05\linewidth}}
+\vspace{-.4cm}
+\begin{flushright}
+{\scriptsize {\textbf{Inspired by Roger D. Peng's lecture on reproducible research, May 2014}}}
+\end{flushright}
+
+%In this series of lectures, we'll go from right to left and see how we can improve.
+#+END_LaTeX
+*** TODO
+
+
+
 *** My Feeling                                                   :noexport:
 Computer scientists have an incredibly *poor training in
 probabilities, statistics, experiment management*, *Design of Experiments*
@@ -396,29 +468,6 @@ I got sick of struggling in vain when trying to build on the work of
 others
 * The Reproducible Research Movement
 ** How does it work in "real" sciences?
-*** Computational Sciences
-#+BEGIN_LaTeX
-\vspace{-2em}
-\begin{overlayarea}{\linewidth}{9cm}
-\hbox{\hspace{-.1\linewidth}
-  \includegraphics<+>[page=2,height=9.85cm,width=1.2\linewidth]{pdf_sources/2011-amp-reproducible-research.pdf}%
-  \includegraphics<+>[page=3,height=9.85cm,width=1.2\linewidth]{pdf_sources/2011-amp-reproducible-research.pdf}%
-  \includegraphics<+>[page=4,height=9.85cm,width=1.2\linewidth]{pdf_sources/2011-amp-reproducible-research.pdf}%
-  \includegraphics<+>[page=5,height=9.85cm,width=1.2\linewidth]{pdf_sources/2011-amp-reproducible-research.pdf}%
-  \includegraphics<+>[page=6,height=9.85cm,width=1.2\linewidth]{pdf_sources/2011-amp-reproducible-research.pdf}%
-  \includegraphics<+>[page=7,height=9.85cm,width=1.2\linewidth]{pdf_sources/2011-amp-reproducible-research.pdf}%
-}
-
-\vspace{-1.5cm}
-\begin{flushright}
-  {\scriptsize Courtesy of Juliana Freire (AMP Workshop on Reproducible research)}
-\end{flushright}
-\end{overlayarea}
-#+END_LaTeX
-
-# \includeslidesJF{2-7}
-# \includeslidesJF{11-14}
-# \includeslidesMG{26}
 *** A few Words on Scientific Foundation                         :noexport:
 - *Falsifiability* or *refutability* of a statement, hypothesis, or
   theory is an inherent possibility to prove it to be false (not
@@ -442,106 +491,6 @@ others
 
 Further readings: *A Summary of Scientific Method*, Peter Kosso,
 Springer
-*** Why Are Scientific Studies so Difficult to Reproduce?
-*Human error*:
-- Experimenter *bias* ([[http://www.nature.com/news/crowdsourced-research-many-hands-make-tight-work-1.18508][crowdsourced research?]])
-- Programming *errors* or data manipulation *mistakes*
-- Poorly selected statistical test
-# ([[https://aom.org/uploadedFiles/Publications/AMJ/Apr_2014_FTE.pdf][especially with Big Data]], Journal: Academy of Management 2014)
-\medskip
-
-*There is just no real incentive in doing so*:
-- Legal barriers, *copyright* (/[[http://web.stanford.edu/~vcs/talks/SC15-Nov182015-STODDEN.pdf][many ongoing thoughts on this in the
-  US]]/)
-- *Competition* issue (/researchware/, bibliometry, ...)
-- Publication *bias* (only the idea matters, not the gory details)
-- Rewards for *positive results*, not for consolidating results
-\medskip
-
-*Technical difficulty*:
-- +*Hardware and software evolve too quickly. It's not worth it*+
-- +*No resources for storing somuch data/information*+
-- +*Lack of easy-to-use tools*+
-
-*** Evidence for a Lack of Reproducibility
-#+LaTeX: \begin{overlayarea}{\linewidth}{8.6cm}
-- Studies showing that scientific papers commonly *leave out
-  experimental details essential for reproduction* and showing
-  *difficulties with replicating published experimental results*:
-  + J.P. Ioannidis. /[[http://www.plosmedicine.org/article/info:doi/10.1371/journal.pmed.0020124][Why Most Published Research Findings Are False]]/ PLoS
-    Med. 2005 August; 2(8)
-  + [[http://www.nature.com/news/reproducibility-a-tragedy-of-errors-1.19264][/Reproducibility: A tragedy of errors/]] Nature, Feb 2016.
-- High number of *failing clinical trials*.
-  + /[[http://mescal.imag.fr/membres/arnaud.legrand/teaching/2011/EP_epidemiology.pdf][Do We Really Know What Makes Us Healthy?]]/, New-York Times —
-    September 16, 2007
-  + /[[http://mescal.imag.fr/membres/arnaud.legrand/teaching/2011/EP_lies.pdf][Lies, Damned Lies, and Medical Science]]/, The Atlantic. Nov, 2010
-- Increase in *retracted papers*:
-  + Steen RG, [[http://dx.doi.org/10.1136/jme.2010.040923][Retractions in the scientific literature: is the]]\newline
-    [[http://dx.doi.org/10.1136/jme.2010.040923][incidence of research fraud increasing?]] \newline J Med Ethics 37:
-    249–253.
-#+LaTeX: \end{overlayarea}
-#+LaTeX: \vspace{-4.2cm}\null\hspace{.47\linewidth}\includegraphics[width=.57\linewidth]{images/reproducibility_crisis_headlines.pdf}\\
-#+LaTeX: \vspace{-1.5cm} \begin{flushright}\scriptsize Courtesy V. Stodden, SC, 2015\hspace{.55\linewidth}\null\end{flushright}
-*** A Reproducibility Crisis?
-#+LaTeX: \begin{overlayarea}{\linewidth}{7.6cm}\null\vspace{-.4cm}
-*[[http://www.nytimes.com/2011/07/08/health/research/08genes.html][The Duke University scandal with scientific misconduct on lung
-cancer]]*
-
-\vspace{-.2cm}\small
-- /Nature Medicine/ - 12, 1294 - 1300 (2006) *Genomic signatures to
-  guide the use of chemotherapeutics*, by
-  #+LaTeX: \bgroup\scriptsize
-  Anil Potti and 16 other researchers from Duke University and
-  University of South Florida
-  #+LaTeX: \egroup\vspace{-.2cm}
-- Major commercial labs licensed it and were about to start using it
-  before two statisticians discovered and publicized its faults
-  #+BEGIN_LaTeX
-  \begin{block}{}\scriptsize
-  Dr. Baggerly and Dr. Coombes found errors almost immediately. Some seemed careless — moving a row or a column over by one in a giant spreadsheet — while others seemed inexplicable. The Duke team shrugged them off as “clerical errors.”
-  \end{block}
-
-  \begin{block}{}\scriptsize
-  The Duke researchers continued to publish papers on their genomic signatures in prestigious journals. Meanwhile, they started three trials using the work to decide which drugs to give patients.
-  \end{block}
-  #+END_LaTeX
-- Retractions: January 2011. [[http://en.wikipedia.org/wiki/Anil_Potti][Ten papers that Potti coauthored in
-  prestigious journals were retracted for varying reasons]]
-- Some people die and may be getting worthless information that is
-  based on *bad science*
-#+LaTeX: \end{overlayarea} \begin{flushright}\scriptsize Courtesy of Adam J. Richards\end{flushright}
-*** Definitely
-- A recent scandal ::
-  In 2013, [[https://en.wikipedia.org/wiki/Dong-Pyou_Han][Dong-Pyou Han]], a former assistant professor of biomedical
-     sciences at Iowa State University was disgraced:\footnotesize
-  - Falsified blood results to make it appear as though a vaccine he was
-    working on had exhibited anti-HIV activity
-  - Han and his team received 
-    #+LaTeX: $\approx\$$19 million from NIH
-  - Retraction and resignation of university
-  - Han was sentenced in 2015 to 57 months imprisonment for
-    fabricating and falsifying data in HIV vaccine trials. He was also
-    fined US 
-    #+LaTeX: \$7.2 million!
-- \normalsize We should avoid witch-hunt :: 
-  #+LaTeX: ~\footnotesize
-  - August 5, 2014, Yoshiki Sasai (stem cell, considered for Nobel
-    Prize) hanged in his laboratory at the RIKEN
-    (Japan). Fraud suspicion...
-  - In 1986, a young postdoctoral fellow at MIT accused her director,
-    Thereza Imanishi-Kari, of falsifying the results of a study
-    published in Cell and co-signed by the Nobel laureate David
-    Baltimore. [..] Declared guilty, Univ. presidency resignation, and
-    finally cleared. This put their careers of two outstanding
-    researchers on hold for ten years based on unfounded accusations.
-- \normalsize Scientific fraud is bad. Let's try to improve :: \footnotesize
-     Have a look at the wikipedia [[https://en.wikipedia.org/wiki/Category:Academic_scandals][/list of academic
-     scandals/]]. [[https://en.wikipedia.org/wiki/Plagiarism][/Plagiarism/]] is also a problem and partly the result
-     of the worldwide [[https://en.wikipedia.org/wiki/Publish_or_perish][/publish or perish/]]/[[https://en.wikipedia.org/wiki/Bibliometrics][/bibliometry/]] craziness
-#+BEGIN_CENTER
-   [[http://www.cnrs.fr/fr/pdf/cim/CIM36.pdf][/The Battle against Scientific Fraud/ in the CNRS International
-   Magazine]]
-#+END_CENTER
 *** Is Fraud a new phenomenon?
 #+BEGIN_LaTeX
   \begin{columns}
