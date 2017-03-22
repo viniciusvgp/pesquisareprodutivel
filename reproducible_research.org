@@ -27,37 +27,7 @@
 #+LATEX_HEADER: \makeatother
 
 
-*** List of ideas for the next "edition"                           :noexport:
-- [ ] Nice ideas may be taken from
-  http://link.springer.com/article/10.1007/s10816-015-9272-9/fulltext.html
-- [X] Slide "My feeling" is irrelevant at that point
-- [X] But do we really have to care in CS? should be extended to other
-  use cases (E.g., graphics, data mining?)
-- [X] Trying to Bridge the Gap: should start with only the Published article
-- [X] After the Sumatra example: add Jupyter screenshot, possibly a
-  CARE/CDE example, and exec&share.
-- [X] Difficult Trade-off: Automatic vs. Explicit
-- [X] 6. Controlling your experiment: 
-  - Mention workflow
-  - Mention numerical reproducibility
-- [X] Link "reproducible research actions" with "following key points"
-- [X] Talk about ACM branding for artifacts?
   
-**** DONE Webinars [4/4]
-- [X] Requirement and installation page:
-  - emacs >= 24.4
-  - org-mode >= 8.3
-  - R/LaTeX installed
-- [X] Provide
-  - simple .el file
-  - template journal.org
-  - template article.org
-- [X] Advertising
-  - asr, rsd, G5K, R4, Pierre Riteau, Kate
-- [X] Organisation
-  1. Arnaud: replicable article and laboratory notebook
-  2. controling your experimental environment (care, cde, ...)
-  3. numerical reproducibility
 ** 
 #+LaTeX: \input{org-babel-document-preembule.tex}
 *** Outline
