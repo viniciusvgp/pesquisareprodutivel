@@ -395,7 +395,7 @@ Did I mention we have *parallel machines* nowadays? $\winkey$
   \end{center}
   \only<.>{
   {\bf \alert{Numerical reproducibility?}}: Approximations in the model, in
-  in the algorithm, in its implementation, in its execution. \medskip
+  the algorithm, in its implementation, in its execution. \medskip
 
   The whole chain needs to be revisited.}
 \end{overlayarea}
