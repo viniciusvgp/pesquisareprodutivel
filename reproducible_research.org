@@ -423,6 +423,18 @@ Did I mention we have *parallel machines* nowadays? $\winkey$
 
 - PAREI AQUI
 
+*** Reproducibility: What Are We Talking About?
+#+BEGIN_LaTeX
+\vspace{-.6em}
+\begin{overlayarea}{\linewidth}{9cm}
+\hbox{\hspace{-.05\linewidth}\includegraphics[page=5,width=1.1\linewidth]{pdf_sources/sumatra_amp2011.pdf}}
+
+\vspace{-2cm}
+\begin{flushright}
+  {\scriptsize Courtesy of Andrew Davison (AMP Workshop on Reproducible research)}
+\end{flushright}
+\end{overlayarea}
+#+END_LaTeX
 *** Reproducible Research: Trying to Bridge the Gap
 #+BEGIN_LaTeX
   \hbox{\hspace{-.05\linewidth}%
@@ -438,6 +450,102 @@ Did I mention we have *parallel machines* nowadays? $\winkey$
 
 %In this series of lectures, we'll go from right to left and see how we can improve.
 #+END_LaTeX
+*** Controling what's happening
+Both the *scientific process* and the *software environment* has become
+extremely complex
+
+Computational biologists or physicist have pushed forward with the
+development of many tools:
+
+- Software environment preservation/reconstruction
+- Workflow engines, data provenance
+- Laboratory notebooks, litterate programming, replicable articles
+- Dissemination platforms
+
+And this landscape is rapidly evolving
+** Reproducible Research/Open Science: Illustrating Nice Ideas Through Different Tools
+#+LaTeX: \begin{frame}{Outline}\tableofcontents[current]\end{frame}
+*** Vistrails: a Workflow Engine for Provenance Tracking
+#+BEGIN_LaTeX
+\vspace{-2.1em}
+\begin{overlayarea}{\linewidth}{9cm}
+\hbox{\hspace{-.1\linewidth}%
+%\includegraphics<+>[page=14,width=1.1\linewidth]{pdf_sources/2011-amp-reproducible-research.pdf}%
+\includegraphics<+>[page=15,width=1.2\linewidth]{pdf_sources/2011-amp-reproducible-research.pdf}%
+}
+
+\vspace{-2.5cm}
+\begin{flushright}
+  {\scriptsize Courtesy of Juliana Freire (AMP Workshop on
+    Reproducible research)}
+\end{flushright}
+\end{overlayarea}
+#+END_LaTeX
+*** VCR: A Universal Identifier for Computational Results
+#+BEGIN_LaTeX
+\vspace{-.6em}
+\begin{overlayarea}{\linewidth}{9cm}
+\hbox{\hspace{-.05\linewidth}%
+\includegraphics<+>[page=76,width=1.1\linewidth]{pdf_sources/amp-ver1MATAN.pdf}%
+\includegraphics<+>[page=78,width=1.1\linewidth]{pdf_sources/amp-ver1MATAN.pdf}%
+\includegraphics<+>[page=113,width=1.1\linewidth]{pdf_sources/amp-ver1MATAN.pdf}%
+\includegraphics<+>[page=26,width=1.1\linewidth]{pdf_sources/amp-ver1MATAN.pdf}%
+}
+
+\vspace{-2cm}
+\begin{flushright}
+  {\scriptsize Courtesy of Matan Gavish and David Donoho (AMP Workshop on
+    Reproducible research)}
+\end{flushright}
+\end{overlayarea}
+#+END_LaTeX 
+*** Sumatra: an "experiment engine" that helps taking notes
+#+BEGIN_LaTeX
+\vspace{-.6em}
+\begin{overlayarea}{\linewidth}{9cm}
+\hbox{\hspace{-.05\linewidth}%
+\includegraphics<+>[page=35,width=1.1\linewidth]{pdf_sources/sumatra_amp2011.pdf}%
+\includegraphics<+>[page=39,width=1.1\linewidth]{pdf_sources/sumatra_amp2011.pdf}%
+\includegraphics<+>[page=40,width=1.1\linewidth]{pdf_sources/sumatra_amp2011.pdf}%
+\includegraphics<+>[page=46,width=1.1\linewidth]{pdf_sources/sumatra_amp2011.pdf}%
+}
+
+\vspace{-2cm}
+\begin{flushright}
+  {\scriptsize Courtesy of Andrew Davison (AMP Workshop on
+    Reproducible research)}
+\end{flushright}
+\end{overlayarea}
+#+END_LaTeX
+*** Ipython/Jupyter Notebook
+*Web app*: create and share documents that contain live code, equations,
+visualizations, and \\
+explanatory text\vspace{-2.8em}
+#+LaTeX: \begin{flushright}
+#+ATTR_LaTeX: :width .93\linewidth
+file:images/jupyterpreview.png
+#+LaTeX: \end{flushright}
+*** Reprozip
+Automagically pack your experiment to fight *dependency hell*
+#+BEGIN_CENTER
+#+ATTR_LaTeX: :width .93\linewidth
+file:images/reprozip.png
+#+END_CENTER
+*** So many new tools
+#+BEGIN_LaTeX
+\vspace{-.6em}
+\begin{overlayarea}{\linewidth}{9cm}
+\hbox{\hspace{-.05\linewidth}%
+\includegraphics[page=13,width=1.1\linewidth]{pdf_sources/DavisFeb132014-STODDEN.pdf}%
+}
+\vspace{-1.5cm}
+\begin{flushright}
+  {\scriptsize {\textbf{Courtesy of Victoria Stodden (UC Davis, Feb 13, 2014)}}}
+\end{flushright}
+\vspace{.6cm}
+And also: \textbf{Org-Mode \smiley}, \textbf{Figshare}, \textbf{Zenodo}, \textbf{ActivePapers \smiley}, \textbf{Elsevier executable paper \frowny}, ...
+\end{overlayarea}
+#+END_LaTeX 
 *** TODO
 
 
