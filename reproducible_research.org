@@ -760,7 +760,7 @@ they have been designed
 
 This may seem easy but is more tricky than it looks like:
 - Arbitrary limits can make your life painful
-- Perennity ([[http://mescal.imag.fr/membres/arnaud.legrand/blog/2015/12/03/roberto_di_cosmo.pdf][Roberto Di Cosmo]]'s talk at R$^4$)
+- Perennity 
   - CodeSpaces murdered on Amazon, Google Code termination, Gitorious
     shutdown, ...
   - Disruption of the web of reference: URLs decay (half-life of 4
