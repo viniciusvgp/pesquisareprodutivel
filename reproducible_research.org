@@ -373,7 +373,7 @@ Did I mention we have *parallel machines* nowadays? $\winkey$
 #+END_LaTeX
 *** Why Are Scientific Studies so Difficult to Reproduce?
 *Human error*:
-- Experimenter *bias* ([[http://www.nature.com/news/crowdsourced-research-many-hands-make-tight-work-1.18508][crowdsourced research?]])
+- Experimenter *bias* 
 - Programming *errors* or data manipulation *mistakes*
 - Poorly selected statistical test
 # ([[https://aom.org/uploadedFiles/Publications/AMJ/Apr_2014_FTE.pdf][especially with Big Data]], Journal: Academy of Management 2014)
@@ -738,7 +738,7 @@ This may seem easy but is more tricky than it looks like:
 
 
 
-* Where are we now?
+
 *** Where are we standing now?
 - Changes in *funding agency* requirements
   - \small Starting? I hardly see how they could really enforce things
