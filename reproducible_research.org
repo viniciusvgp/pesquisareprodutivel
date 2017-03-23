@@ -1,5 +1,5 @@
 #+TITLE:     Reproducible Research
-#+AUTHOR:    Vinícius Garcia Pinto\newline Arnaud Legrand
+#+AUTHOR:    Vinícius Garcia Pinto\newline
 #+DATE: \newline\newline\includegraphics[scale=.4]{images/logoUFRGSinriaCNRSuga.pdf} \newline\newline Porto Alegre - March 23, 2017
 #+STARTUP: beamer overview indent
 #+TAGS: noexport(n)
@@ -768,6 +768,8 @@ This may seem easy but is more tricky than it looks like:
   Slides and Videos: [[https://github.com/alegrand/RR_webinars]]
  
 *** Thank you
+- Special Thanks to *Arnaud Legrand* for the major part of these slides
+and for compiling these great ideas!
 **** Contact:
 - Arnaud Legrand: arnaud.legrand@inria.fr
 - Lucas Mello Schnorr: schnorr@inf.ufrgs.br
